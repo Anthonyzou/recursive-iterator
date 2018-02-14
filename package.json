@@ -50,8 +50,5 @@
     "tree",
     "json"
   ],
-  "dependencies": {
-    "lodash.isobject": "3.0.2",
-    "lodash.keys": "4.2.0"
-  }
+  "dependencies": {}
 }

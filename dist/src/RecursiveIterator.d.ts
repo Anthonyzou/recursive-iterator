@@ -27,7 +27,7 @@ declare class RecursiveIterator {
      * @param {*} any
      * @returns {Boolean}
      */
-    isNode(any: any): any;
+    isNode(any: any): boolean;
     /**
      * @param {*} any
      * @returns {Boolean}
@@ -45,7 +45,13 @@ declare class RecursiveIterator {
      * @param {Number} deep
      * @returns {Array<Object>}
      */
-    getStatesOfChildNodes(node: any, path: any, deep: any): any;
+    getStatesOfChildNodes(node: any, path: any, deep: any): {
+        parent: any;
+        node: any;
+        key: any;
+        path: any[];
+        deep: number;
+    }[];
     /**
      * Returns state of node. Calls for each node
      * @param {Object} [parent]

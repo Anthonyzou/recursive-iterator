@@ -1,7 +1,6 @@
 "use strict";
 
-import * as isObject from "lodash.isobject";
-import * as keys from "lodash.keys";
+import {isObject, getKeys} from "./lang";
 
 const EMPTY_STATE = {};
 
@@ -97,7 +96,7 @@ const EMPTY_STATE = {};
    * @returns {Array<Object>}
    */
   getStatesOfChildNodes(node, path, deep) {
-    return keys(node).map(key =>
+    return getKeys(node).map(key =>
       this.getState(node, node[key], key, path.concat(key), deep + 1)
     );
   }
@@ -128,4 +127,10 @@ const EMPTY_STATE = {};
     return this;
   }
 }
+
+
+
 export = RecursiveIterator;
+
+
+

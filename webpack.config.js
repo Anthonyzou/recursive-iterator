@@ -24,6 +24,10 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: ['.ts', '.tsx', '.js']
+  },
   devtool: "source-map",
   output: {
     path: __dirname + "/dist",
@@ -35,7 +39,7 @@ module.exports = {
     new UglifyJSPlugin({
       // Minify only [name].min.js file
       // http://stackoverflow.com/a/34018909
-      // include: /\.min\.js$/
+      include: /\.min\.js$/
     }),
     new webpack.BannerPlugin(
       `${pkg.name} v${pkg.version}\n` + `${pkg.homepage}`

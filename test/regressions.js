@@ -32,10 +32,11 @@ describe('Iterate through array-like objects', function () {
 
   let iteratorOne = new RecursiveIterator(rootOne)
   for (let itemOne = iteratorOne.next(); !itemOne.done; itemOne = iteratorOne.next()) {
+    console.log(itemOne)
     let stateOne = itemOne.value
     queueOne.push(stateOne)
   }
-
+  console.log(queueOne)
   it('queue.length must be 1', function () {
     assert.strictEqual(queueOne.length, 1)
   })
