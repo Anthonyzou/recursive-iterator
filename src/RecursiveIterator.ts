@@ -1,10 +1,10 @@
 "use strict";
 
-import {isObject, getKeys} from "./lang";
+import { isObject, getKeys } from "./lang";
 
 const EMPTY_STATE = {};
 
- class RecursiveIterator {
+class RecursiveIterator {
   private CACHE = [];
   private QUEUE = [];
   private STATE;
@@ -127,10 +127,4 @@ const EMPTY_STATE = {};
     return this;
   }
 }
-
-
-
 export = RecursiveIterator;
-
-
-
