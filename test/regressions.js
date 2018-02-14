@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const RecursiveIterator = require('../src/RecursiveIterator')
+const RecursiveIterator = require('../dist/recursive-iterator')
 const assert = require('assert')
 
 describe('Do not iterate over objects if it keys.length === 0', function () {

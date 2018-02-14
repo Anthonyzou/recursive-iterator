@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const RecursiveIterator = require('../src/RecursiveIterator')
+const RecursiveIterator = require('../dist/recursive-iterator')
 const assert = require('assert')
 
 describe('Actual iteration should return the object of the specified type', function () {
