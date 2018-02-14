@@ -1,5 +1,3 @@
-"use strict";
-
 import { isObject, getKeys } from "./lang";
 
 const EMPTY_STATE = {};

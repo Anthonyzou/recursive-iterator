@@ -1,25 +1,26 @@
-"use strict";
+'use strict'
 
 // http://webpack.github.io/docs/
-const webpack = require("webpack");
+const webpack = require('webpack')
 // https://webpack.js.org/plugins/uglifyjs-webpack-plugin/
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path')
 
-const pkg = require("./package.json");
+const pkg = require('./package.json')
 
-const ENTRY_POINT = "./src/RecursiveIterator.ts";
-const LIBRARY_NAME = "RecursiveIterator";
+const ENTRY_POINT = './src/RecursiveIterator.ts'
+const LIBRARY_NAME = 'RecursiveIterator'
 
 module.exports = {
   entry: {
     [pkg.name]: ENTRY_POINT,
-    [pkg.name + ".min"]: ENTRY_POINT
+    [pkg.name + '.min']: ENTRY_POINT
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/
       }
     ]
@@ -28,12 +29,12 @@ module.exports = {
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: ['.ts', '.tsx', '.js']
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   output: {
-    path: __dirname + "/dist",
-    libraryTarget: "umd",
+    path: path.join(__dirname, 'dist'),
+    libraryTarget: 'umd',
     library: LIBRARY_NAME,
-    filename: "[name].js"
+    filename: '[name].js'
   },
   plugins: [
     new UglifyJSPlugin({
@@ -45,4 +46,4 @@ module.exports = {
       `${pkg.name} v${pkg.version}\n` + `${pkg.homepage}`
     )
   ]
-};
+}

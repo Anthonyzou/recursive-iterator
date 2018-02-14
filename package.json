@@ -18,7 +18,7 @@
   },
   "scripts": {
     "prepublish": "webpack",
-    "ensure-code-style": "standard --fix ./test/*.js",
+    "ensure-code-style": "standard --fix webpack.config.js ./test/*.js",
     "bundle": "webpack",
     "test": "mocha",
     "test-cov": "istanbul cover _mocha -- --reporter dot",
