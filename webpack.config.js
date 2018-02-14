@@ -9,7 +9,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const pkg = require('./package.json');
 
 
-const ENTRY_POINT = './src/RecursiveIterator.js';
+const ENTRY_POINT = './src/RecursiveIterator.ts';
 const LIBRARY_NAME = 'RecursiveIterator';
 
 
@@ -19,20 +19,17 @@ module.exports = {
     [pkg.name + '.min']: ENTRY_POINT
   },
   module: {
-    loaders: [
-      // https://github.com/babel/babel-loader
+    rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2016']
-        }
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
   devtool: "source-map",
   output: {
-    path: './dist',
+    path: __dirname+'/dist',
     libraryTarget: 'umd',
     library: LIBRARY_NAME,
     filename: "[name].js"

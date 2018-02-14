@@ -1,0 +1,13 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "lib": ["es2017", "dom", "esnext"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "noImplicitAny": false
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  }
+}
