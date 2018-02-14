@@ -4,7 +4,7 @@
   "description": "It iterates through a graph or a tree recursively",
   "homepage": "https://github.com/nervgh/recursive-iterator",
   "license": "MIT",
-  "main": "src/RecursiveIterator.js",
+  "main": "dist/src/recursive-iterator.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nervgh/recursive-iterator.git"
@@ -17,6 +17,7 @@
     "node": ">=6"
   },
   "scripts": {
+    "prepublish": "webpack",
     "ensure-code-style": "standard --fix ./test/*.js",
     "bundle": "webpack",
     "test": "mocha",
