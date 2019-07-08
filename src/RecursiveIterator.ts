@@ -1,8 +1,8 @@
-import { isObject, getKeys } from "./lang";
+import { isObject, getKeys } from './lang';
 
 const EMPTY_STATE = {};
 
-class RecursiveIterator {
+export = class RecursiveIterator {
   private CACHE = [];
   private QUEUE = [];
   private STATE;
@@ -33,12 +33,12 @@ class RecursiveIterator {
           if (this.IGNORE_CIRCULAR) {
             // skip
           } else {
-            throw new Error("Circular reference");
+            throw new Error('Circular reference');
           }
         } else {
           if (this.onStepInto(this.STATE)) {
             const descriptors = this.getStatesOfChildNodes(node, path, deep);
-            const method = this.BYPASS_MODE ? "push" : "unshift";
+            const method = this.BYPASS_MODE ? 'push' : 'unshift';
             this.QUEUE[method](...descriptors);
             this.CACHE.push(node);
           }
@@ -124,5 +124,4 @@ class RecursiveIterator {
   [Symbol.iterator]() {
     return this;
   }
-}
-export = RecursiveIterator;
+};

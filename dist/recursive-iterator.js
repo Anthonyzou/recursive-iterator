@@ -85,7 +85,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 var lang_1 = __webpack_require__(1);
 var EMPTY_STATE = {};
-var RecursiveIterator = /** @class */ (function () {
+module.exports = /** @class */ (function () {
     /**
      * @param {Object|Array} root
      * @param {Number} [bypassMode=0]
@@ -115,13 +115,13 @@ var RecursiveIterator = /** @class */ (function () {
                         // skip
                     }
                     else {
-                        throw new Error("Circular reference");
+                        throw new Error('Circular reference');
                     }
                 }
                 else {
                     if (this.onStepInto(this.STATE)) {
                         var descriptors = this.getStatesOfChildNodes(node, path, deep);
-                        var method = this.BYPASS_MODE ? "push" : "unshift";
+                        var method = this.BYPASS_MODE ? 'push' : 'unshift';
                         (_b = this.QUEUE)[method].apply(_b, descriptors);
                         this.CACHE.push(node);
                     }
@@ -209,7 +209,6 @@ var RecursiveIterator = /** @class */ (function () {
     };
     return RecursiveIterator;
 }());
-module.exports = RecursiveIterator;
 
 
 /***/ }),

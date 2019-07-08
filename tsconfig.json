@@ -4,6 +4,7 @@
     "baseUrl": "/",
     "lib": ["es2017", "dom", "esnext"],
     "moduleResolution": "node",
+    "outDir": "../dist",
     "sourceMap": true,
     "target": "es5",
     "declaration": true,
